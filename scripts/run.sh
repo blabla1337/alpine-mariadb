@@ -58,4 +58,8 @@ EOF
 	echo "exec /usr/bin/mysqld --user=mysql --console --skip-name-resolve --skip-networking=0" "$@"
 fi
 
+#magic fix ...
+mv /var/lib/mysql/ib_logfile0 /var/lib/mysql/ib_logfile0-backup
+mv /var/lib/mysql/ib_logfile1 /var/lib/mysql/ib_logfile1-backup
+
 exec /usr/bin/mysqld --user=mysql --console --skip-name-resolve --skip-networking=0 $@
