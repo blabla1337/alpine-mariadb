@@ -11,3 +11,5 @@ EXPOSE 3306
 VOLUME ["/var/lib/mysql"]
 
 ENTRYPOINT ["/scripts/run.sh"]
+
+#docker buildx build --no-cache --platform linux/amd64,linux/arm/v7 -t blabla1337/mysql --push .
